@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatSettingsViewController" customModule="MsgGame" customModuleProvider="target">
+            <connections>
+                <outlet property="avatarImageView" destination="nWd-Wb-a2n" id="2pu-Z6-xPM"/>
+                <outlet property="btnEdit" destination="eOU-2r-g6H" id="0mQ-Ne-986"/>
+                <outlet property="itemsTableView" destination="e3E-Jd-i4a" id="RZW-dX-Xko"/>
+                <outlet property="txtRoom" destination="xTL-pJ-dut" id="mUD-za-8YD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nWd-Wb-a2n">
+                    <rect key="frame" x="137" y="84" width="100" height="100"/>
+                    <color key="backgroundColor" red="0.77647058820000003" green="0.80000000000000004" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="1l8-u0-xoc"/>
+                        <constraint firstAttribute="width" constant="100" id="h7F-7m-Wv4"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="XpE-oJ-GNn" appends="YES" id="0N0-Ys-vfJ"/>
+                    </connections>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xTL-pJ-dut">
+                    <rect key="frame" x="60" y="202" width="255" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e3E-Jd-i4a">
+                    <rect key="frame" x="0.0" y="286" width="375" height="381"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="EAY-1D-QsU"/>
+                        <outlet property="delegate" destination="-1" id="rAG-DU-svC"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOU-2r-g6H">
+                    <rect key="frame" x="60" y="240" width="255" height="30"/>
+                    <color key="backgroundColor" red="0.27450980390000002" green="0.47058823529999999" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="xUz-e3-AuM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="Edit Room Info">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="handleUpdateSettings:" destination="-1" eventType="touchUpInside" id="cVt-aN-t82"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jV3-Zz-zbc">
+                    <rect key="frame" x="60" y="183" width="69" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQd-YX-s7i">
+                    <rect key="frame" x="82" y="84" width="60" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="nWd-Wb-a2n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="6zb-bZ-Zbe"/>
+                <constraint firstItem="jV3-Zz-zbc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="A3D-kS-XAR"/>
+                <constraint firstItem="nWd-Wb-a2n" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AJg-p3-EUJ"/>
+                <constraint firstItem="xTL-pJ-dut" firstAttribute="top" secondItem="jV3-Zz-zbc" secondAttribute="bottom" constant="4" id="N6m-EE-FB5"/>
+                <constraint firstItem="eOU-2r-g6H" firstAttribute="top" secondItem="xTL-pJ-dut" secondAttribute="bottom" constant="8" id="Nny-ss-3ri"/>
+                <constraint firstAttribute="bottom" secondItem="e3E-Jd-i4a" secondAttribute="bottom" id="RCw-ys-9mv"/>
+                <constraint firstItem="nWd-Wb-a2n" firstAttribute="leading" secondItem="JQd-YX-s7i" secondAttribute="trailing" constant="-5" id="fCT-pr-N2P"/>
+                <constraint firstItem="nWd-Wb-a2n" firstAttribute="top" secondItem="JQd-YX-s7i" secondAttribute="top" id="hQy-cg-tlx"/>
+                <constraint firstAttribute="trailing" secondItem="eOU-2r-g6H" secondAttribute="trailing" constant="60" id="k8q-3I-ZqX"/>
+                <constraint firstAttribute="trailing" secondItem="xTL-pJ-dut" secondAttribute="trailing" constant="60" id="kwA-uC-wgx"/>
+                <constraint firstItem="e3E-Jd-i4a" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lp4-1j-TUH"/>
+                <constraint firstAttribute="trailing" secondItem="e3E-Jd-i4a" secondAttribute="trailing" id="nHQ-Ly-z6f"/>
+                <constraint firstItem="xTL-pJ-dut" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="nc7-JT-fFT"/>
+                <constraint firstItem="eOU-2r-g6H" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="r5M-Sp-rzB"/>
+                <constraint firstItem="e3E-Jd-i4a" firstAttribute="top" secondItem="eOU-2r-g6H" secondAttribute="bottom" constant="16" id="uhO-EZ-Xu4"/>
+                <constraint firstItem="xTL-pJ-dut" firstAttribute="top" secondItem="nWd-Wb-a2n" secondAttribute="bottom" constant="18" id="zSe-TP-YYe"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+        <tapGestureRecognizer id="XpE-oJ-GNn">
+            <connections>
+                <action selector="openImagePicker:" destination="-1" id="fBy-Ce-z7R"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>
